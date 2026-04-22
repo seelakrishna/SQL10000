@@ -64,3 +64,35 @@ SELECT PRODUCT_NAME,(PRICE*1.10) AS NEW_PRICE FROM PRODUCTS;
 | Desk Lamp    |    38.4890 |
 +--------------+------------+
 11 rows in set (0.0009 sec)
+SELECT PRODUCT_NAME, PRICE, STOCK_QUANTITY  FROM PRODUCTS WHERE PRICE=299.99;
++--------------+--------+----------------+
+| PRODUCT_NAME | PRICE  | STOCK_QUANTITY |
++--------------+--------+----------------+
+| Monitor      | 299.99 |             30 |
++--------------+--------+----------------+
+SELECT PRODUCT_NAME, PRICE, STOCK_QUANTITY FROM PRODUCTS  WHERE STOCK_QUANTITY<100;
++--------------+--------+----------------+
+| PRODUCT_NAME | PRICE  | STOCK_QUANTITY |
++--------------+--------+----------------+
+| Laptop       | 999.99 |             50 |
+| Headphones   |  49.99 |             80 |
+| Monitor      | 299.99 |             30 |
+| Webcam       |  59.99 |             60 |
+| USB Hub      |  24.99 |             90 |
+| Desk Chair   | 189.99 |             40 |
+| Desk Lamp    |  34.99 |             75 |
++--------------+--------+----------------+
+SELECT PRODUCT_NAME,PRICE,STOCK_QUANTITY FROM PRODUCTS WHERE PRICE <999 ;
++--------------+--------+----------------+
+| PRODUCT_NAME | PRICE  | STOCK_QUANTITY |
++--------------+--------+----------------+
+| Smartphone   | 699.49 |            120 |
+| Headphones   |  49.99 |             80 |
+| Keyboard     |  29.99 |            200 |
+| Mouse        |  19.99 |            150 |
+| Monitor      | 299.99 |             30 |
+| Webcam       |  59.99 |             60 |
+| USB Hub      |  24.99 |             90 |
+| Desk Chair   | 189.99 |             40 |
+| Desk Lamp    |  34.99 |             75 |
++--------------+--------+----------------+
