@@ -1,0 +1,66 @@
+
+CREATE TABLE PRODUCTS(PRODUCT_ID INT,Product_name VARCHAR(50), price DECIMAL(10,2), discount INT,stock_quantity INT);
+CREATE TABLE EMPLOYEE(EMP_ID INT,NAME VARCHAR(50),SALARY VARCHAR(10),BONUS_PERCENTAGE INT);
+ INSERT INTO PRODUCTS (PRODUCT_ID, Product_name, price, discount, stock_quantity)
+                                       -> VALUES
+                                       -> (1,  'Laptop',        999.99,  10,  50),
+                                       -> (2,  'Smartphone',    699.49,   5, 120),
+                                       -> (3,  'Headphones',     49.99,  15,  80),
+                                       -> (4,  'Keyboard',       29.99,   0, 200),
+                                       -> (5,  'Mouse',          19.99,   5, 150),
+                                       -> (6,  'Monitor',       299.99,  20,  30),
+                                       -> (7,  'Webcam',         59.99,  10,  60),
+                                       -> (8,  'USB Hub',        24.99,   0,  90),
+                                       -> (9,  'Desk Chair',    189.99,  25,  40),
+                                     -> (10, 'Desk Lamp',      34.99,   5,  75);
+ELECT PRODUCT_NAME,PRICE,DISCOUNT,STOCK_QUANTITY, (PRICE*STOCK_QUANTITY) AS TOTAL FROM PRODUCTS;
++--------------+----------+----------+----------------+------------+
+| PRODUCT_NAME | PRICE    | DISCOUNT | STOCK_QUANTITY | TOTAL      |
++--------------+----------+----------+----------------+------------+
+| FRIDGE       | 14999.00 |        5 |            100 | 1499900.00 |
+| Laptop       |   999.99 |       10 |             50 |   49999.50 |
+| Smartphone   |   699.49 |        5 |            120 |   83938.80 |
+| Headphones   |    49.99 |       15 |             80 |    3999.20 |
+| Keyboard     |    29.99 |        0 |            200 |    5998.00 |
+| Mouse        |    19.99 |        5 |            150 |    2998.50 |
+| Monitor      |   299.99 |       20 |             30 |    8999.70 |
+| Webcam       |    59.99 |       10 |             60 |    3599.40 |
+| USB Hub      |    24.99 |        0 |             90 |    2249.10 |
+| Desk Chair   |   189.99 |       25 |             40 |    7599.60 |
+| Desk Lamp    |    34.99 |        5 |             75 |    2624.25 |
++--------------+----------+----------+----------------+------------+
+11 rows in set (0.0012 sec)
+ MySQL  localhost:33060+ ssl  d13r  SQL > SELECT PRODUCT_NAME,(PRICE-5) AS DIS_PRICE FROM PRODUCTS;
++--------------+-----------+
+| PRODUCT_NAME | DIS_PRICE |
++--------------+-----------+
+| FRIDGE       |  14994.00 |
+| Laptop       |    994.99 |
+| Smartphone   |    694.49 |
+| Headphones   |     44.99 |
+| Keyboard     |     24.99 |
+| Mouse        |     14.99 |
+| Monitor      |    294.99 |
+| Webcam       |     54.99 |
+| USB Hub      |     19.99 |
+| Desk Chair   |    184.99 |
+| Desk Lamp    |     29.99 |
++--------------+-----------+
+11 rows in set (0.0010 sec)
+SELECT PRODUCT_NAME,(PRICE*1.10) AS NEW_PRICE FROM PRODUCTS;
++--------------+------------+
+| PRODUCT_NAME | NEW_PRICE  |
++--------------+------------+
+| FRIDGE       | 16498.9000 |
+| Laptop       |  1099.9890 |
+| Smartphone   |   769.4390 |
+| Headphones   |    54.9890 |
+| Keyboard     |    32.9890 |
+| Mouse        |    21.9890 |
+| Monitor      |   329.9890 |
+| Webcam       |    65.9890 |
+| USB Hub      |    27.4890 |
+| Desk Chair   |   208.9890 |
+| Desk Lamp    |    38.4890 |
++--------------+------------+
+11 rows in set (0.0009 sec)
