@@ -96,3 +96,32 @@ SELECT PRODUCT_NAME,PRICE,STOCK_QUANTITY FROM PRODUCTS WHERE PRICE <999 ;
 | Desk Chair   | 189.99 |             40 |
 | Desk Lamp    |  34.99 |             75 |
 +--------------+--------+----------------+
+SELECT NAME ,CITY,AGE FROM STUDENTS WHERE CITY IN ('MUMBAI','DELHI');
++-------+--------+-----+
+| NAME  | CITY   | AGE |
++-------+--------+-----+
+| KOHLI | DELHI  |  23 |
+| RAVI  | MUMBAI |  21 |
++-------+--------+-----+
+2 rows in set (0.0012 sec)
+
+ MySQL  localhost:33060+ ssl  d13r  SQL > SELECT NAME ,CITY , AGE FROM STUDENTS WHERE CITY NOT IN ('DELHI','CHENNAI');
++------------+-----------+-----+
+| NAME       | CITY      | AGE |
++------------+-----------+-----+
+| KRISHNA    | VIJAYWADA |  21 |
+| JAYRAM     | BANGOLORE |  20 |
+| ANKULROYI  | GUWHATI   |  24 |
+| RAVI       | MUMBAI    |  21 |
+| SURYAVAMSI | KOLKATA   |  15 |
++------------+-----------+-----+
+SELECT NAME FROM STUDENTS WHERE EMAIL IS NULL;
++------------+
+| NAME       |
++------------+
+| KRISHNA    |
+| JAYRAM     |
+| ANKULROYI  |
+| KOHLI      |
+| RAVI       |
+| SURYAVAMSI |
