@@ -125,24 +125,35 @@ SELECT NAME FROM STUDENTS WHERE EMAIL IS NULL;
 | KOHLI      |
 | RAVI       |
 | SURYAVAMSI |
+SELECT NAME, CITY FROM STUDENTS WHERE NAME LIKE 'k%';
++---------+-----------+
+| NAME    | CITY      |
++---------+-----------+
+| KRISHNA | VIJAYWADA |
+| KOHLI   | DELHI     |
++---------+-----------+
+ELECT NAME, CITY FROM STUDENTS WHERE NAME LIKE '%A';
++---------+-----------+
+| NAME    | CITY      |
++---------+-----------+
+| KRISHNA | VIJAYWADA |
++---------+-----------+
+1 row in set (0.0012 sec)
 
- SELECT NAME CITY FROM STUDENTS WHERE NAME LIKE 'k%';
-+---------+
-| CITY    |
-+---------+
-| KRISHNA |
-| KOHLI   |
-+---------+
- SELECT NAME CITY FROM STUDENTS WHERE NAME LIKE '%A';
-+---------+
-| CITY    |
-+---------+
-| KRISHNA |
-+---------+
- SELECT NAME CITY FROM STUDENTS WHERE LENGTH(NAME)=7;
-+---------+
-| CITY    |
-+---------+
-| KRISHNA |
-+---------+
-1 row in set (0.0045 sec)
+ MySQL  localhost:33060+ ssl  d13r  SQL > SELECT NAME ,CITY FROM STUDENTS WHERE LENGTH(NAME)=7;
++---------+-----------+
+| NAME    | CITY      |
++---------+-----------+
+| KRISHNA | VIJAYWADA |
++---------+-----------+
+1 row in set (0.0008 sec)
+SELECT NAME, CITY FROM STUDENTS WHERE NAME  NOT LIKE 'k%';
++------------+-----------+
+| NAME       | CITY      |
++------------+-----------+
+| JAYRAM     | BANGOLORE |
+| ANKULROYI  | GUWHATI   |
+| RAVI       | MUMBAI    |
+| SURYAVAMSI | KOLKATA   |
++------------+-----------+
+4 rows in set (0.0022 sec)
