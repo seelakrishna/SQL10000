@@ -125,3 +125,24 @@ SELECT NAME FROM STUDENTS WHERE EMAIL IS NULL;
 | KOHLI      |
 | RAVI       |
 | SURYAVAMSI |
+
+ SELECT NAME CITY FROM STUDENTS WHERE NAME LIKE 'k%';
++---------+
+| CITY    |
++---------+
+| KRISHNA |
+| KOHLI   |
++---------+
+ SELECT NAME CITY FROM STUDENTS WHERE NAME LIKE '%A';
++---------+
+| CITY    |
++---------+
+| KRISHNA |
++---------+
+ SELECT NAME CITY FROM STUDENTS WHERE LENGTH(NAME)=7;
++---------+
+| CITY    |
++---------+
+| KRISHNA |
++---------+
+1 row in set (0.0045 sec)
