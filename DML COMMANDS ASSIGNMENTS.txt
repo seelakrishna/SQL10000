@@ -1,0 +1,78 @@
+CREATE TABLE APPOINTMENTS(ID INT,PATIENT_NAME VARCHAR(50),APPOINTMENT_DATE  DATE,APPOINTMENT_TIME TIME);
+
+Query OK, 0 rows affected (0.0187 sec)
+
+CREATE TABLE ORDERS(ID INT,ITEM VARCHAR(50),ORDERED_AT DATETIME,SHIPPED_AT TIMESTAMP);
+Query OK, 0 rows affected (0.0180 sec)
+
+INSERT INTO STUDENTS VALUES (1,'TARAK',22,'HYD');
+Query OK, 1 row affected (0.0046 sec)
+
+INSERT INTO EMPLOYEES VALUES(1,'RAJU',50000,'DEVELOPER');
+Query OK, 1 row affected (0.0046 sec)
+
+INSERT INTO PRODUCTS VALUES(1102,'LAPTOP',79999),(2203,'BTMUSIC',1999),(1234,'BUDS',3999);
+Query OK, 3 rows affected (0.0068 sec)
+
+Records: 3  Duplicates: 0  Warnings: 0
+
+ INSERT INTO APPOINTMENTS VALUES(23,'RAGHU','2026-04-23','12:32:00');
+Query OK, 1 row affected (0.0060 sec)
+
+INSERT INTO PRODUCTS VALUES(1102,'LAPTOP',79999),(2203,'BTMUSIC',1999),(1234,'BUDS',3999);
+Query OK, 3 rows affected (0.0068 sec)
+
+Records: 3  Duplicates: 0  Warnings: 0
+
+ INSERT INTO APPOINTMENTS VALUES(23,'RAGHU','2026-04-23','12:32:00');
+Query OK, 1 row affected (0.0060 sec)
+
+UPDATE STUDENTS SET CITY='BANGOLORE' WHERE ID=2;
+Query OK, 1 row affected (0.0069 sec)
+
+Rows matched: 1  Changed: 1  Warnings: 0
+
+SELECT EMP_NAME, SALARY , SALARY+5000 FROM EMPLOYEES  WHERE DEPARTMENT='HR';
++----------+----------+-------------+
+| EMP_NAME | SALARY   | SALARY+5000 |
++----------+----------+-------------+
+| Anjali   | 55000.00 |    60000.00 |
+| Sneha    | 47000.00 |    52000.00 |
++----------+----------+-------------+
+
+
+ MySQL  localhost:33060+ ssl  company_db  SQL > UPDATE PRODUCTS SET PRICE=0;
+Query OK, 3 rows affected (0.0104 sec)
+
+Rows matched: 3  Changed: 3  Warnings: 0
+
+SELECT *FROM PRODUCTS;
++------------+--------------+-------+
+| PRODUCT_ID | PRODUCT_NAME | PRICE |
++------------+--------------+-------+
+|       1102 | LAPTOP       |     0 |
+|       2203 | BTMUSIC      |     0 |
+|       1234 | BUDS         |     0 |
++------------+--------------+-------+
+3 rows in set (0.0009 sec)
+
+UPDATE APPOINTMENTS SET APPOINTMENT_DATE='2024-07-20' WHERE ID=1 ;
+Query OK, 0 rows affected (0.0048 sec)
+
+Rows matched: 0  Changed: 0  Warnings: 0
+ MySQL  localhost:33060+ ssl  college_db  SQL > SELECT *FROM APPOINTMENTS;
++----+--------------+------------------+------------------+
+| ID | PATIENT_NAME | APPOINTMENT_DATE | APPOINTMENT_TIME |
++----+--------------+------------------+------------------+
+| 23 | RAGHU        | 2026-04-23       | 12:32:00         |
++----+--------------+------------------+------------------+
+1 row in set (0.0012 sec)
+
+DELETE FROM STUDENTS WHERE ID=3;
+Query OK, 1 row affected (0.0062 sec)
+
+ DELETE FROM STUDENTS;
+Query OK, 4 rows affected (0.0035 sec)
+
+ DELETE FROM ORDERS WHERE SHIPPED_AT IS NULL;
+Query OK, 0 rows affected (0.0010 sec)
