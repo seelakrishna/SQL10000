@@ -1,0 +1,93 @@
+SELECT PRODUCT_NAME, PRICE, STOCK_QUANTITY  FROM PRODUCTS WHERE PRICE=299.99;
++--------------+--------+----------------+
+| PRODUCT_NAME | PRICE  | STOCK_QUANTITY |
++--------------+--------+----------------+
+| Monitor      | 299.99 |             30 |
++--------------+--------+----------------+
+SELECT PRODUCT_NAME, PRICE, STOCK_QUANTITY FROM PRODUCTS  WHERE STOCK_QUANTITY<100;
++--------------+--------+----------------+
+| PRODUCT_NAME | PRICE  | STOCK_QUANTITY |
++--------------+--------+----------------+
+| Laptop       | 999.99 |             50 |
+| Headphones   |  49.99 |             80 |
+| Monitor      | 299.99 |             30 |
+| Webcam       |  59.99 |             60 |
+| USB Hub      |  24.99 |             90 |
+| Desk Chair   | 189.99 |             40 |
+| Desk Lamp    |  34.99 |             75 |
++--------------+--------+----------------+
+SELECT PRODUCT_NAME,PRICE,STOCK_QUANTITY FROM PRODUCTS WHERE PRICE <999 ;
++--------------+--------+----------------+
+| PRODUCT_NAME | PRICE  | STOCK_QUANTITY |
++--------------+--------+----------------+
+| Smartphone   | 699.49 |            120 |
+| Headphones   |  49.99 |             80 |
+| Keyboard     |  29.99 |            200 |
+| Mouse        |  19.99 |            150 |
+| Monitor      | 299.99 |             30 |
+| Webcam       |  59.99 |             60 |
+| USB Hub      |  24.99 |             90 |
+| Desk Chair   | 189.99 |             40 |
+| Desk Lamp    |  34.99 |             75 |
++--------------+--------+----------------+
+SELECT NAME ,CITY,AGE FROM STUDENTS WHERE CITY IN ('MUMBAI','DELHI');
++-------+--------+-----+
+| NAME  | CITY   | AGE |
++-------+--------+-----+
+| KOHLI | DELHI  |  23 |
+| RAVI  | MUMBAI |  21 |
++-------+--------+-----+
+2 rows in set (0.0012 sec)
+
+ MySQL  localhost:33060+ ssl  d13r  SQL > SELECT NAME ,CITY , AGE FROM STUDENTS WHERE CITY NOT IN ('DELHI','CHENNAI');
++------------+-----------+-----+
+| NAME       | CITY      | AGE |
++------------+-----------+-----+
+| KRISHNA    | VIJAYWADA |  21 |
+| JAYRAM     | BANGOLORE |  20 |
+| ANKULROYI  | GUWHATI   |  24 |
+| RAVI       | MUMBAI    |  21 |
+| SURYAVAMSI | KOLKATA   |  15 |
++------------+-----------+-----+
+SELECT NAME FROM STUDENTS WHERE EMAIL IS NULL;
++------------+
+| NAME       |
++------------+
+| KRISHNA    |
+| JAYRAM     |
+| ANKULROYI  |
+| KOHLI      |
+| RAVI       |
+| SURYAVAMSI |
+SELECT NAME, CITY FROM STUDENTS WHERE NAME LIKE 'k%';
++---------+-----------+
+| NAME    | CITY      |
++---------+-----------+
+| KRISHNA | VIJAYWADA |
+| KOHLI   | DELHI     |
++---------+-----------+
+ELECT NAME, CITY FROM STUDENTS WHERE NAME LIKE '%A';
++---------+-----------+
+| NAME    | CITY      |
++---------+-----------+
+| KRISHNA | VIJAYWADA |
++---------+-----------+
+1 row in set (0.0012 sec)
+
+ MySQL  localhost:33060+ ssl  d13r  SQL > SELECT NAME ,CITY FROM STUDENTS WHERE LENGTH(NAME)=7;
++---------+-----------+
+| NAME    | CITY      |
++---------+-----------+
+| KRISHNA | VIJAYWADA |
++---------+-----------+
+1 row in set (0.0008 sec)
+SELECT NAME, CITY FROM STUDENTS WHERE NAME  NOT LIKE 'k%';
++------------+-----------+
+| NAME       | CITY      |
++------------+-----------+
+| JAYRAM     | BANGOLORE |
+| ANKULROYI  | GUWHATI   |
+| RAVI       | MUMBAI    |
+| SURYAVAMSI | KOLKATA   |
++------------+-----------+
+4 rows in set (0.0022 sec)
