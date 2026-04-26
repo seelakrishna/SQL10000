@@ -99,98 +99,89 @@ ELECT EMP_NAME,EMP_SALARY,(EMP_SALARY*12) AS ANNUAL_SALARY FROM EMPLOYEES;
 +-------+----------------+------------+-------------+
 10 rows in set (0.0012 sec)
 
+SELECT EMPID,EMP_NAME,EMP_SALARY,EMPID%2 AS REMAINDER FROM EMPLOYEES;
++-------+----------------+------------+-----------+
+| EMPID | EMP_NAME       | EMP_SALARY | REMAINDER |
++-------+----------------+------------+-----------+
+|   101 | Rahul Sharma   |   55000.00 |         1 |
+|   102 | krishna        |   30000.00 |         0 |
+|   103 | krishna        |   30000.00 |         1 |
+|   104 | Sneha Reddy    |   71000.00 |         0 |
+|   105 | Vikram Singh   |   83000.00 |         1 |
+|   106 | Anjali Mehta   |   59000.00 |         0 |
+|   107 | Ravi Verma     |   45000.00 |         1 |
+|   108 | Pooja Nair     |   67000.00 |         0 |
+|   109 | Suresh Babu    |   52000.00 |         1 |
+|   110 | Divya Krishnan |   78000.00 |         0 |
++-------+----------------+------------+-----------+
+10 rows in set (0.0028 sec)
+SELECT PRODUCT_NAME,STOCK_QUANTITY, STOCK_QUANTITY/4  AS SHARE FROM PRODUCTS;
++--------------+----------------+---------+
+| PRODUCT_NAME | STOCK_QUANTITY | SHARE   |
++--------------+----------------+---------+
+| FRIDGE       |            100 | 25.0000 |
+| Laptop       |             50 | 12.5000 |
+| Smartphone   |            120 | 30.0000 |
+| Headphones   |             80 | 20.0000 |
+| Keyboard     |            200 | 50.0000 |
+| Mouse        |            150 | 37.5000 |
+| Monitor      |             30 |  7.5000 |
+| Webcam       |             60 | 15.0000 |
+| USB Hub      |             90 | 22.5000 |
+| Desk Chair   |             40 | 10.0000 |
+| Desk Lamp    |             75 | 18.7500 |
++--------------+----------------+---------+
 
+SELECT PRODUCT_NAME,STOCK_QUANTITY, PRICE-2  AS NEW_PROFIT FROM PRODUCTS;
++--------------+----------------+------------+
+| PRODUCT_NAME | STOCK_QUANTITY | NEW_PROFIT |
++--------------+----------------+------------+
+| FRIDGE       |            100 |   14997.00 |
+| Laptop       |             50 |     997.99 |
+| Smartphone   |            120 |     697.49 |
+| Headphones   |             80 |      47.99 |
+| Keyboard     |            200 |      27.99 |
+| Mouse        |            150 |      17.99 |
+| Monitor      |             30 |     297.99 |
+| Webcam       |             60 |      57.99 |
+| USB Hub      |             90 |      22.99 |
+| Desk Chair   |             40 |     187.99 |
+| Desk Lamp    |             75 |      32.99 |
++--------------+----------------+------------+
+11 rows in set (0.0010 sec)
 
-SELECT PRODUCT_NAME, PRICE, STOCK_QUANTITY  FROM PRODUCTS WHERE PRICE=299.99;
-+--------------+--------+----------------+
-| PRODUCT_NAME | PRICE  | STOCK_QUANTITY |
-+--------------+--------+----------------+
-| Monitor      | 299.99 |             30 |
-+--------------+--------+----------------+
-SELECT PRODUCT_NAME, PRICE, STOCK_QUANTITY FROM PRODUCTS  WHERE STOCK_QUANTITY<100;
-+--------------+--------+----------------+
-| PRODUCT_NAME | PRICE  | STOCK_QUANTITY |
-+--------------+--------+----------------+
-| Laptop       | 999.99 |             50 |
-| Headphones   |  49.99 |             80 |
-| Monitor      | 299.99 |             30 |
-| Webcam       |  59.99 |             60 |
-| USB Hub      |  24.99 |             90 |
-| Desk Chair   | 189.99 |             40 |
-| Desk Lamp    |  34.99 |             75 |
-+--------------+--------+----------------+
-SELECT PRODUCT_NAME,PRICE,STOCK_QUANTITY FROM PRODUCTS WHERE PRICE <999 ;
-+--------------+--------+----------------+
-| PRODUCT_NAME | PRICE  | STOCK_QUANTITY |
-+--------------+--------+----------------+
-| Smartphone   | 699.49 |            120 |
-| Headphones   |  49.99 |             80 |
-| Keyboard     |  29.99 |            200 |
-| Mouse        |  19.99 |            150 |
-| Monitor      | 299.99 |             30 |
-| Webcam       |  59.99 |             60 |
-| USB Hub      |  24.99 |             90 |
-| Desk Chair   | 189.99 |             40 |
-| Desk Lamp    |  34.99 |             75 |
-+--------------+--------+----------------+
-SELECT NAME ,CITY,AGE FROM STUDENTS WHERE CITY IN ('MUMBAI','DELHI');
-+-------+--------+-----+
-| NAME  | CITY   | AGE |
-+-------+--------+-----+
-| KOHLI | DELHI  |  23 |
-| RAVI  | MUMBAI |  21 |
-+-------+--------+-----+
-2 rows in set (0.0012 sec)
+SELECT EMPID,EMP_NAME,EMP_SALARY,EMP_SALARY+200 AS BONUS_SALARY FROM EMPLOYEES;
++-------+----------------+------------+--------------+
+| EMPID | EMP_NAME       | EMP_SALARY | BONUS_SALARY |
++-------+----------------+------------+--------------+
+|   101 | Rahul Sharma   |   55000.00 |     55200.00 |
+|   102 | krishna        |   30000.00 |     30200.00 |
+|   103 | krishna        |   30000.00 |     30200.00 |
+|   104 | Sneha Reddy    |   71000.00 |     71200.00 |
+|   105 | Vikram Singh   |   83000.00 |     83200.00 |
+|   106 | Anjali Mehta   |   59000.00 |     59200.00 |
+|   107 | Ravi Verma     |   45000.00 |     45200.00 |
+|   108 | Pooja Nair     |   67000.00 |     67200.00 |
+|   109 | Suresh Babu    |   52000.00 |     52200.00 |
+|   110 | Divya Krishnan |   78000.00 |     78200.00 |
++-------+----------------+------------+--------------+
+10 rows in set (0.0011 sec)
 
- MySQL  localhost:33060+ ssl  d13r  SQL > SELECT NAME ,CITY , AGE FROM STUDENTS WHERE CITY NOT IN ('DELHI','CHENNAI');
-+------------+-----------+-----+
-| NAME       | CITY      | AGE |
-+------------+-----------+-----+
-| KRISHNA    | VIJAYWADA |  21 |
-| JAYRAM     | BANGOLORE |  20 |
-| ANKULROYI  | GUWHATI   |  24 |
-| RAVI       | MUMBAI    |  21 |
-| SURYAVAMSI | KOLKATA   |  15 |
-+------------+-----------+-----+
-SELECT NAME FROM STUDENTS WHERE EMAIL IS NULL;
-+------------+
-| NAME       |
-+------------+
-| KRISHNA    |
-| JAYRAM     |
-| ANKULROYI  |
-| KOHLI      |
-| RAVI       |
-| SURYAVAMSI |
-SELECT NAME, CITY FROM STUDENTS WHERE NAME LIKE 'k%';
-+---------+-----------+
-| NAME    | CITY      |
-+---------+-----------+
-| KRISHNA | VIJAYWADA |
-| KOHLI   | DELHI     |
-+---------+-----------+
-ELECT NAME, CITY FROM STUDENTS WHERE NAME LIKE '%A';
-+---------+-----------+
-| NAME    | CITY      |
-+---------+-----------+
-| KRISHNA | VIJAYWADA |
-+---------+-----------+
-1 row in set (0.0012 sec)
+SELECT PRODUCT_NAME,STOCK_QUANTITY, ((PRICE*50)-100)  AS BULCK_DIS FROM PRODUCTS;
++--------------+----------------+-----------+
+| PRODUCT_NAME | STOCK_QUANTITY | BULCK_DIS |
++--------------+----------------+-----------+
+| FRIDGE       |            100 | 749850.00 |
+| Laptop       |             50 |  49899.50 |
+| Smartphone   |            120 |  34874.50 |
+| Headphones   |             80 |   2399.50 |
+| Keyboard     |            200 |   1399.50 |
+| Mouse        |            150 |    899.50 |
+| Monitor      |             30 |  14899.50 |
+| Webcam       |             60 |   2899.50 |
+| USB Hub      |             90 |   1149.50 |
+| Desk Chair   |             40 |   9399.50 |
+| Desk Lamp    |             75 |   1649.50 |
++--------------+----------------+-----------+
+11 rows in set (0.0010 sec)
 
- MySQL  localhost:33060+ ssl  d13r  SQL > SELECT NAME ,CITY FROM STUDENTS WHERE LENGTH(NAME)=7;
-+---------+-----------+
-| NAME    | CITY      |
-+---------+-----------+
-| KRISHNA | VIJAYWADA |
-+---------+-----------+
-1 row in set (0.0008 sec)
-SELECT NAME, CITY FROM STUDENTS WHERE NAME  NOT LIKE 'k%';
-+------------+-----------+
-| NAME       | CITY      |
-+------------+-----------+
-| JAYRAM     | BANGOLORE |
-| ANKULROYI  | GUWHATI   |
-| RAVI       | MUMBAI    |
-| SURYAVAMSI | KOLKATA   |
-+------------+-----------+
-4 rows in set (0.0022 sec)
