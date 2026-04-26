@@ -1,7 +1,7 @@
-
 CREATE TABLE PRODUCTS(PRODUCT_ID INT,Product_name VARCHAR(50), price DECIMAL(10,2), discount INT,stock_quantity INT);
+
 CREATE TABLE EMPLOYEE(EMP_ID INT,NAME VARCHAR(50),SALARY VARCHAR(10),BONUS_PERCENTAGE INT);
- INSERT INTO PRODUCTS (PRODUCT_ID, Product_name, price, discount, stock_quantity)
+INSERT INTO PRODUCTS (PRODUCT_ID, Product_name, price, discount, stock_quantity)
                                        -> VALUES
                                        -> (1,  'Laptop',        999.99,  10,  50),
                                        -> (2,  'Smartphone',    699.49,   5, 120),
