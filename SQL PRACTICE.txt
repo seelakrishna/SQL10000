@@ -64,6 +64,43 @@ SELECT PRODUCT_NAME,(PRICE*1.10) AS NEW_PRICE FROM PRODUCTS;
 | Desk Lamp    |    38.4890 |
 +--------------+------------+
 11 rows in set (0.0009 sec)
+
+ELECT EMP_NAME,EMP_SALARY,(EMP_SALARY*12) AS ANNUAL_SALARY FROM EMPLOYEES;
++----------------+------------+---------------+
+| EMP_NAME       | EMP_SALARY | ANNUAL_SALARY |
++----------------+------------+---------------+
+| Rahul Sharma   |   55000.00 |     660000.00 |
+| krishna        |   30000.00 |     360000.00 |
+| krishna        |   30000.00 |     360000.00 |
+| Sneha Reddy    |   71000.00 |     852000.00 |
+| Vikram Singh   |   83000.00 |     996000.00 |
+| Anjali Mehta   |   59000.00 |     708000.00 |
+| Ravi Verma     |   45000.00 |     540000.00 |
+| Pooja Nair     |   67000.00 |     804000.00 |
+| Suresh Babu    |   52000.00 |     624000.00 |
+| Divya Krishnan |   78000.00 |     936000.00 |
++----------------+------------+---------------+
+10 rows in set (0.0021 sec)
+
+ SELECT EMPID,EMP_NAME,EMP_SALARY,(EMP_SALARY*10/100) AS BONUS FROM EMPLOYEES;
++-------+----------------+------------+-------------+
+| EMPID | EMP_NAME       | EMP_SALARY | BONUS       |
++-------+----------------+------------+-------------+
+|   101 | Rahul Sharma   |   55000.00 | 5500.000000 |
+|   102 | krishna        |   30000.00 | 3000.000000 |
+|   103 | krishna        |   30000.00 | 3000.000000 |
+|   104 | Sneha Reddy    |   71000.00 | 7100.000000 |
+|   105 | Vikram Singh   |   83000.00 | 8300.000000 |
+|   106 | Anjali Mehta   |   59000.00 | 5900.000000 |
+|   107 | Ravi Verma     |   45000.00 | 4500.000000 |
+|   108 | Pooja Nair     |   67000.00 | 6700.000000 |
+|   109 | Suresh Babu    |   52000.00 | 5200.000000 |
+|   110 | Divya Krishnan |   78000.00 | 7800.000000 |
++-------+----------------+------------+-------------+
+10 rows in set (0.0012 sec)
+
+
+
 SELECT PRODUCT_NAME, PRICE, STOCK_QUANTITY  FROM PRODUCTS WHERE PRICE=299.99;
 +--------------+--------+----------------+
 | PRODUCT_NAME | PRICE  | STOCK_QUANTITY |
