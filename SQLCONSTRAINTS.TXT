@@ -1,3 +1,19 @@
+CREATE TABLE CELLPOINT (ID INT UNIQUE, PHONE INT UNIQUE);
+Query OK, 0 rows affected (0.0516 sec)
+ ALTER TABLE STUDENTS ADD CONSTRAINT UNIQUE (ID);
+Query OK, 0 rows affected (0.0437 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+CREATE TABLE STUDENTS (NAME VARCHAR(30) NOT NULL ,ROLL_N0 INT UNIQUE);
+Query OK, 0 rows affected (0.0482 sec)
+ALTER TABLE STUDENTS MODIFY ADDRESS VARCHAR(60) NOT NULL;
+Query OK, 0 rows affected (0.0954 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+SCHOOL
+
+
+
+
 
 SELECT NAME ,CITY,AGE FROM STUDENTS WHERE CITY IN ('MUMBAI','DELHI');
 +-------+--------+-----+
