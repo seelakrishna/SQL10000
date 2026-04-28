@@ -1,93 +1,146 @@
-SELECT PRODUCT_NAME, PRICE, STOCK_QUANTITY  FROM PRODUCTS WHERE PRICE=299.99;
+SELECT PRODUCT_NAME, PRICE, STOCK_QUANTITY  FROM PRODUCTS WHERE PRICE=500;
 +--------------+--------+----------------+
 | PRODUCT_NAME | PRICE  | STOCK_QUANTITY |
 +--------------+--------+----------------+
-| Monitor      | 299.99 |             30 |
+| Monitor      | 500 |             30 |
 +--------------+--------+----------------+
-SELECT PRODUCT_NAME, PRICE, STOCK_QUANTITY FROM PRODUCTS  WHERE STOCK_QUANTITY<100;
-+--------------+--------+----------------+
-| PRODUCT_NAME | PRICE  | STOCK_QUANTITY |
-+--------------+--------+----------------+
-| Laptop       | 999.99 |             50 |
-| Headphones   |  49.99 |             80 |
-| Monitor      | 299.99 |             30 |
-| Webcam       |  59.99 |             60 |
-| USB Hub      |  24.99 |             90 |
-| Desk Chair   | 189.99 |             40 |
-| Desk Lamp    |  34.99 |             75 |
-+--------------+--------+----------------+
-SELECT PRODUCT_NAME,PRICE,STOCK_QUANTITY FROM PRODUCTS WHERE PRICE <999 ;
+SELECT PRODUCT_NAME, PRICE, STOCK_QUANTITY FROM PRODUCTS  WHERE STOCK_QUANTITY<10;
 +--------------+--------+----------------+
 | PRODUCT_NAME | PRICE  | STOCK_QUANTITY |
 +--------------+--------+----------------+
-| Smartphone   | 699.49 |            120 |
-| Headphones   |  49.99 |             80 |
-| Keyboard     |  29.99 |            200 |
-| Mouse        |  19.99 |            150 |
-| Monitor      | 299.99 |             30 |
-| Webcam       |  59.99 |             60 |
-| USB Hub      |  24.99 |             90 |
-| Desk Chair   | 189.99 |             40 |
-| Desk Lamp    |  34.99 |             75 |
+| Laptop       | 999.99 |             5 |
+| Headphones   |  49.99 |             8 |
+| Monitor      | 299.99 |             3 |
+| Webcam       |  59.99 |             6 |
+| USB Hub      |  24.99 |             9 |
+| Desk Chair   | 189.99 |             4 |
+| Desk Lamp    |  34.99 |             7 |
++--------------+-------+----------------+
+SELECT PRODUCT_NAME,PRICE,STOCK_QUANTITY FROM PRODUCTS WHERE PRICE >1000 ;
 +--------------+--------+----------------+
-SELECT NAME ,CITY,AGE FROM STUDENTS WHERE CITY IN ('MUMBAI','DELHI');
-+-------+--------+-----+
-| NAME  | CITY   | AGE |
-+-------+--------+-----+
-| KOHLI | DELHI  |  23 |
-| RAVI  | MUMBAI |  21 |
-+-------+--------+-----+
-2 rows in set (0.0012 sec)
+| PRODUCT_NAME | PRICE  | STOCK_QUANTITY |
++--------------+--------+----------------+
+| Smartphone   |  1699.49 |            120 |
+| Headphones   |  1149.99 |             80 |
+| Keyboard     |  2911.99 |            200 |
+| Mouse        |  1999.99 |            150 |
+| Monitor      |  1299.99 |             30 |
+| Webcam       |  1459.99 |             60 |
+| USB Hub      |  1224.99 |             90 |
+| Desk Chair   |  3189.99 |             40 |
+| Desk Lamp    |  1134.99 |             75 |
++--------------+----------+----------------+
+SELECT PRODUCT_NAME,PRICE FROM PRODUCTS WHERE PRICE<=250;
++--------------+-------+
+| PRODUCT_NAME | PRICE |
++--------------+-------+
+| LAPTOP       |     0 |
+| BTMUSIC      |     0 |
+| BUDS         |     0 |
++--------------+-------+
+3 rows in set (0.0012 sec)
+SELECT PRODUCT_NAME,PRICE,STOCK_QUANTITY FROM PRODUCTS WHERE STOCK_QUANTITY >= 50;
++--------------+---------+------------------+
+| PRODUCT_NAME | PRICE   | STOCK_QUANTITY |
++--------------+---------+------------------+
+| Laptop       | 55000.5 |               56 |
+| Headphones   | 1500.75 |               52 |
+| Mouse        |  500.25 |               74 |
++--------------+---------+------------------+
+3 rows in set (0.0007 sec)
+SELECT PRODUCT_NAME,PRICE,PRODUCT_QUANTITY FROM PRODUCTS WHERE PRODUCT_NAME != 'PEN';
++--------------+---------+------------------+
+| PRODUCT_NAME | PRICE   | PRODUCT_QUANTITY |
++--------------+---------+------------------+
+| LAPTOP       |       0 |             NULL |
+| BTMUSIC      |       0 |             NULL |
+| BUDS         |       0 |             NULL |
+| Laptop       | 55000.5 |               56 |
+| Smartphone   |   25000 |               30 |
+| Headphones   | 1500.75 |               52 |
+| Keyboard     |     800 |               45 |
+| Mouse        |  500.25 |               74 |
+| Monitor      |   12000 |               12 |
+| Printer      |    8500 |               18 |
+| Tablet       |   18001 |               30 |
+| Speaker      |  2200.5 |               22 |
+| Webcam       |    3000 |               16 |
++--------------+---------+------------------+
+13 rows in set (0.0008 sec)
+SELECT EMP_NAME,SALARY,CITY FROM EMPLOYEES WHERE DEPARTMENT='SALARY' AND SALARY >40000;
++----------+----------+-------------------+
+| EMP_NAME | SALARY   | CITY              |
++----------+----------+-------------------+
+| Ravi     | 45000.00 | HYD               |
+| Divya    | 43000.00 | TIRUVANANTHAPURAM |
++----------+----------+-------------------+
+2 rows in set (0.0007 sec)
 
- MySQL  localhost:33060+ ssl  d13r  SQL > SELECT NAME ,CITY , AGE FROM STUDENTS WHERE CITY NOT IN ('DELHI','CHENNAI');
-+------------+-----------+-----+
-| NAME       | CITY      | AGE |
-+------------+-----------+-----+
-| KRISHNA    | VIJAYWADA |  21 |
-| JAYRAM     | BANGOLORE |  20 |
-| ANKULROYI  | GUWHATI   |  24 |
-| RAVI       | MUMBAI    |  21 |
-| SURYAVAMSI | KOLKATA   |  15 |
-+------------+-----------+-----+
-SELECT NAME FROM STUDENTS WHERE EMAIL IS NULL;
-+------------+
-| NAME       |
-+------------+
-| KRISHNA    |
-| JAYRAM     |
-| ANKULROYI  |
-| KOHLI      |
-| RAVI       |
-| SURYAVAMSI |
-SELECT NAME, CITY FROM STUDENTS WHERE NAME LIKE 'k%';
-+---------+-----------+
-| NAME    | CITY      |
-+---------+-----------+
-| KRISHNA | VIJAYWADA |
-| KOHLI   | DELHI     |
-+---------+-----------+
-ELECT NAME, CITY FROM STUDENTS WHERE NAME LIKE '%A';
-+---------+-----------+
-| NAME    | CITY      |
-+---------+-----------+
-| KRISHNA | VIJAYWADA |
-+---------+-----------+
-1 row in set (0.0012 sec)
+ SELECT EMP_NAME,SALARY,CITY FROM EMPLOYEES WHERE CITY='HYDERABAD' OR SALARY >60000;
++----------+----------+---------+
+| EMP_NAME | SALARY   | CITY    |
++----------+----------+---------+
+| Ravi     | 45000.00 | HYD     |
+| Arjun    | 70000.00 | KOLKATA |
+| Rahul    | 65000.00 | PATNA   |
+| Vikram   | 75000.00 | DELHI   |
++----------+----------+---------+
+4 rows in set (0.0008 sec)
 
- MySQL  localhost:33060+ ssl  d13r  SQL > SELECT NAME ,CITY FROM STUDENTS WHERE LENGTH(NAME)=7;
-+---------+-----------+
-| NAME    | CITY      |
-+---------+-----------+
-| KRISHNA | VIJAYWADA |
-+---------+-----------+
-1 row in set (0.0008 sec)
-SELECT NAME, CITY FROM STUDENTS WHERE NAME  NOT LIKE 'k%';
-+------------+-----------+
-| NAME       | CITY      |
-+------------+-----------+
-| JAYRAM     | BANGOLORE |
-| ANKULROYI  | GUWHATI   |
-| RAVI       | MUMBAI    |
-| SURYAVAMSI | KOLKATA   |
-+------------+-----------+
-4 rows in set (0.0022 sec)
+SELECT * FROM EMPLOYEES WHERE DEPARTMENT NOT IN ('FINANCE');
++--------+----------+----------+------------+-------------------+
+| EMP_ID | EMP_NAME | SALARY   | DEPARTMENT | CITY              |
++--------+----------+----------+------------+-------------------+
+|      1 | RAJU     | 50000.00 | DEVELOPER  | BANGOLRE          |
+|      2 | Ravi     | 45000.00 | Tester     | HYD               |
+|      4 | Kiran    | 60000.00 | Manager    | WARANGAL          |
+|      5 | Sita     | 48000.00 | Support    | VIZAG             |
+|      6 | Arjun    | 70000.00 | Developer  | KOLKATA           |
+|      7 | Priya    | 52000.00 | Designer   | JAIPUR            |
+|      8 | Rahul    | 65000.00 | Developer  | PATNA             |
+|     10 | Vikram   | 75000.00 | Manager    | DELHI             |
+|     11 | Divya    | 43000.00 | Tester     | TIRUVANANTHAPURAM |
++--------+----------+----------+------------+-------------------+
+9 rows in set (0.0006 sec)
+SELECT * FROM STUDENTS WHERE CITY IN ('MUMBAI','PUNE','KOLKATA');
++----+-------------+---------+-------+-----------------+
+| ID | NAME        | CITY    | MARKS | EMAIL           |
++----+-------------+---------+-------+-----------------+
+|  5 | Kiran Patel | Mumbai  |    92 | kiran@gmail.com |
+|  7 | Rahul Das   | Kolkata |    75 | rahul@gmail.com |
+| 10 | Pooja Verma | Pune    |    87 | pooja@gmail.com |
++----+-------------+---------+-------+-----------------+
+3 rows in set (0.0010 sec)
+
+ MySQL  localhost:33060+ ssl  school_db  SQL > SELECT * FROM STUDENTS WHERE CITY  NOT IN ('DELHI','CHENNAI');
++----+--------------+------------+-------+------------------+
+| ID | NAME         | CITY       | MARKS | EMAIL            |
++----+--------------+------------+-------+------------------+
+|  1 | Ravi Kumar   | Vijayawada |    85 | ravi@gmail.com   |
+|  2 | Sita Rao     | Hyderabad  |    90 | sita@gmail.com   |
+|  3 | Arjun Reddy  | Bangalore  |    78 | arjun@gmail.com  |
+|  5 | Kiran Patel  | Mumbai     |    92 | kiran@gmail.com  |
+|  7 | Rahul Das    | Kolkata    |    75 | rahul@gmail.com  |
+|  8 | Sneha Iyer   | Coimbatore |    89 | sneha@gmail.com  |
+|  9 | Vikram Singh | Jaipur     |    83 | vikram@gmail.com |
+| 10 | Pooja Verma  | Pune       |    87 | pooja@gmail.com  |
++----+--------------+------------+-------+------------------+
+8 rows in set (0.0008 sec)
+
+ SELECT * FROM STUDENTS WHERE EMAIL IS NOT NULL;
++----+--------------+------------+-------+------------------+
+| ID | NAME         | CITY       | MARKS | EMAIL            |
++----+--------------+------------+-------+------------------+
+|  1 | Ravi Kumar   | Vijayawada |    85 | ravi@gmail.com   |
+|  2 | Sita Rao     | Hyderabad  |    90 | sita@gmail.com   |
+|  3 | Arjun Reddy  | Bangalore  |    78 | arjun@gmail.com  |
+|  4 | Priya Sharma | Chennai    |    88 | priya@gmail.com  |
+|  5 | Kiran Patel  | Mumbai     |    92 | kiran@gmail.com  |
+|  6 | Anjali Mehta | Delhi      |    81 | anjali@gmail.com |
+|  7 | Rahul Das    | Kolkata    |    75 | rahul@gmail.com  |
+|  8 | Sneha Iyer   | Coimbatore |    89 | sneha@gmail.com  |
+|  9 | Vikram Singh | Jaipur     |    83 | vikram@gmail.com |
+| 10 | Pooja Verma  | Pune       |    87 | pooja@gmail.com  |
++----+--------------+------------+-------+------------------+
+10 rows in set (0.0006 sec)
+
