@@ -9,70 +9,20 @@ Query OK, 0 rows affected (0.0482 sec)
 ALTER TABLE STUDENTS MODIFY ADDRESS VARCHAR(60) NOT NULL;
 Query OK, 0 rows affected (0.0954 sec)
 Records: 0  Duplicates: 0  Warnings: 0
-SCHOOL
+ CREATE TABLE BOOKS(BOOKNAME VARCHAR(50) PRIMARY KEY,AUTHOR VARCHAR(30));
+Query OK, 0 rows affected (0.0333 sec)
+ ALTER TABLE CELLPOINT ADD CONSTRAINT PRIMARY KEY (ID);
+Query OK, 0 rows affected (0.0453 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+
+REATE TABLE EMPLOYEES(ID INT UNIQUE,SALARY DECIMAL(10,2) NOT NULL, AGE INT CONSTRAINT CHK_AGE CHECK (AGE>18));
+Query OK, 0 rows affected (0.0649 sec)
+ALTER TABLE EMPLOYEES ADD CONSTRAINT CHK_SALARY CHECK (SALARY>0);
+Query OK, 0 rows affected (0.0785 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
 
 
 
 
-
-SELECT NAME ,CITY,AGE FROM STUDENTS WHERE CITY IN ('MUMBAI','DELHI');
-+-------+--------+-----+
-| NAME  | CITY   | AGE |
-+-------+--------+-----+
-| KOHLI | DELHI  |  23 |
-| RAVI  | MUMBAI |  21 |
-+-------+--------+-----+
-2 rows in set (0.0012 sec)
-
- MySQL  localhost:33060+ ssl  d13r  SQL > SELECT NAME ,CITY , AGE FROM STUDENTS WHERE CITY NOT IN ('DELHI','CHENNAI');
-+------------+-----------+-----+
-| NAME       | CITY      | AGE |
-+------------+-----------+-----+
-| KRISHNA    | VIJAYWADA |  21 |
-| JAYRAM     | BANGOLORE |  20 |
-| ANKULROYI  | GUWHATI   |  24 |
-| RAVI       | MUMBAI    |  21 |
-| SURYAVAMSI | KOLKATA   |  15 |
-+------------+-----------+-----+
-SELECT NAME FROM STUDENTS WHERE EMAIL IS NULL;
-+------------+
-| NAME       |
-+------------+
-| KRISHNA    |
-| JAYRAM     |
-| ANKULROYI  |
-| KOHLI      |
-| RAVI       |
-| SURYAVAMSI |
-SELECT NAME, CITY FROM STUDENTS WHERE NAME LIKE 'k%';
-+---------+-----------+
-| NAME    | CITY      |
-+---------+-----------+
-| KRISHNA | VIJAYWADA |
-| KOHLI   | DELHI     |
-+---------+-----------+
-ELECT NAME, CITY FROM STUDENTS WHERE NAME LIKE '%A';
-+---------+-----------+
-| NAME    | CITY      |
-+---------+-----------+
-| KRISHNA | VIJAYWADA |
-+---------+-----------+
-1 row in set (0.0012 sec)
-
- MySQL  localhost:33060+ ssl  d13r  SQL > SELECT NAME ,CITY FROM STUDENTS WHERE LENGTH(NAME)=7;
-+---------+-----------+
-| NAME    | CITY      |
-+---------+-----------+
-| KRISHNA | VIJAYWADA |
-+---------+-----------+
-1 row in set (0.0008 sec)
-SELECT NAME, CITY FROM STUDENTS WHERE NAME  NOT LIKE 'k%';
-+------------+-----------+
-| NAME       | CITY      |
-+------------+-----------+
-| JAYRAM     | BANGOLORE |
-| ANKULROYI  | GUWHATI   |
-| RAVI       | MUMBAI    |
-| SURYAVAMSI | KOLKATA   |
-+------------+-----------+
-4 rows in set (0.0022 sec)
