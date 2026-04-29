@@ -1,0 +1,50 @@
+ SELECT COUNT(*) FROM EMPLOYEES;
++----------+
+| COUNT(*) |
++----------+
+|       11 |
++----------+
+1 row in set (0.0032 sec)
+
+SELECT COUNT(SALARY) FROM EMPLOYEES;
++---------------+
+| COUNT(SALARY) |
++---------------+
+|            11 |
++---------------+
+1 row in set (0.0009 sec)
+ SELECT COUNT(DISTINCT DEPARTMENT)AS UNIQUE_DEPARTMENT FROM EMPLOYEES;
++-------------------+
+| UNIQUE_DEPARTMENT |
++-------------------+
+|                 6 |
++-------------------+
+1 row in set (0.0023 sec)
+SELECT SUM(SALARY) AS TOTAL_AMOUNT FROM EMPLOYEES;
++--------------+
+| TOTAL_AMOUNT |
++--------------+
+|    610000.00 |
++--------------+
+1 row in set (0.0011 sec)
+ELECT AVG(SALARY) FROM EMPLOYEES;
++--------------+
+| AVG(SALARY)  |
++--------------+
+| 55454.545455 |
++--------------+
+1 row in set (0.0009 sec)
+SELECT MAX(SALARY) FROM EMPLOYEES;
++-------------+
+| MAX(SALARY) |
++-------------+
+|    75000.00 |
++-------------+
+1 row in set (0.0022 sec)
+SELECT MIN(SALARY) FROM EMPLOYEES;
++-------------+
+| MIN(SALARY) |
++-------------+
+|    43000.00 |
++-------------+
+1 row in set (0.0009 sec)
