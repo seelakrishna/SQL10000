@@ -48,3 +48,17 @@ SELECT MIN(SALARY) FROM EMPLOYEES;
 |    43000.00 |
 +-------------+
 1 row in set (0.0009 sec)
+ SELECT SUM(SALARY+BONUS) FROM EMPLOYEES;
++-------------------+
+| SUM(SALARY+BONUS) |
++-------------------+
+|         665000.00 |
++-------------------+
+1 row in set (0.0010 sec)
+ SELECT AVG(SALARY*0.9) FROM EMPLOYEES;
++-----------------+
+| AVG(SALARY*0.9) |
++-----------------+
+|   49909.0909091 |
++-----------------+
+1 row in set (0.0022 sec)
