@@ -1,0 +1,48 @@
+SELECT customer_id
+FROM orders
+GROUP BY customer_id
+HAVING COUNT(*) > 3;
+SELECT category
+FROM products
+GROUP BY category
+HAVING SUM(price) > 50000;
+SELECT category
+FROM products
+GROUP BY category
+HAVING SUM(price) > 50000;
+SELECT salesperson_id
+FROM sales
+GROUP BY salesperson_id
+HAVING COUNT(DISTINCT product_id) >= 3
+   AND SUM(quantity) > 100;
+SELECT *
+FROM employees
+ORDER BY salary DESC;
+SELECT product_name,
+       price * 0.85 AS discounted_price
+FROM products
+ORDER BY discounted_price ASC;
+SELECT *
+FROM students
+ORDER BY grade ASC, score DESC;
+SELECT *
+FROM customers
+LIMIT 5;
+SELECT *
+FROM products
+ORDER BY price DESC
+LIMIT 3;
+SELECT *
+FROM students
+LIMIT 5 OFFSET 5;
+SELECT *
+FROM orders
+ORDER BY order_date DESC
+LIMIT 10 OFFSET 20;
+
+
+
+
+
+
+
