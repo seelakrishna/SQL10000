@@ -26,7 +26,7 @@ WHERE department_id =
 
 select employee_id,employee_name,department_id,salary
 from employees
-where saary>
+where salary>
 select avg(salary) from employees);
 
 select department_id,total_salary
